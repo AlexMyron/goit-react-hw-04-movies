@@ -1,0 +1,28 @@
+.nav {
+  padding-left: 20px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  max-width: 75vw;
+
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+
+  border-bottom: 1px solid black;
+}
+
+.navLink {
+  text-decoration: none;
+  color: black;
+
+  transition: transform 500ms ease;
+}
+
+.navLink:hover,
+.navLink:focus {
+  transform: scale(1.2);
+}
+
+.activeLInk {
+  color: rgb(124, 150, 255);
+}
