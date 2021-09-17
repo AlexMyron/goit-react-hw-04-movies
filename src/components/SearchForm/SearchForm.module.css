@@ -1,0 +1,22 @@
+.searchForm {
+  padding-top: 20px;
+  padding-left: 30px;
+  text-align: left;
+}
+
+.searchInput {
+  width: 300px;
+  box-sizing: border-box;
+  padding: 7px;
+}
+.searchInput:focus {
+  border: 1px solid rgb(240, 134, 36);
+  outline: none;
+}
+.btn {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 10px;
+}

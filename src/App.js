@@ -1,31 +1,38 @@
+import { Route, Switch } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import "./App.css";
-import { Route, Switch } from "react-router";
 import Navigation from "./components/Navigation";
-import HomeView from "./views/HomeView";
-import AuthorsView from "./views/AuthorsView";
-import BooksView from "./views/BooksView";
-import NotFoundView from "./views/NotFoundView";
+
+const HomeView = lazy(() =>
+  import("./views/HomeView/HomeView" /* webpackChunkName: "Home-view" */)
+);
+const MoviesView = lazy(() =>
+  import("./views/MoviesView" /* webpackChunkName: "Movie-view" */)
+);
+const SearchMoviesView = lazy(() =>
+  import("./views/SearchMoviesView" /* webpackChunkName: "SearchMovies-view" */)
+);
 
 function App() {
   return (
     <div className="App">
       <Navigation />
-
-      <Switch>
-        <Route exact path="/">
-          <HomeView />
-        </Route>
-        <Route exact path="/authors">
-          <AuthorsView />
-        </Route>
-        <Route exact path="/books">
-          <BooksView />
-        </Route>
-        <Route>
-          <NotFoundView />
-        </Route>
-      </Switch>
-      {/* <p>Добро пожаловать!</p> */}
+      <Suspense fallback={<p>Loading... </p>}>
+        <Switch>
+          <Route exact path="/">
+            <HomeView />
+          </Route>
+          <Route exact path="/movies">
+            <SearchMoviesView />
+          </Route>
+          <Route path="/movies/:movieId">
+            <MoviesView />
+          </Route>
+          <Route>
+            <p>Such page was not found.</p>
+          </Route>
+        </Switch>
+      </Suspense>
     </div>
   );
 }

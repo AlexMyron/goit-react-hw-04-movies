@@ -1,0 +1,40 @@
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.wrapper {
+  padding: 30px;
+  text-align: left;
+}
+
+.mainInfo {
+  display: flex;
+  gap: 10px;
+}
+
+.imageWrapper {
+  width: 300px;
+}
+
+.genres {
+  display: flex;
+  gap: 10px;
+}
+
+.addInfo {
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-left: 10px;
+  border-top: 1px solid rgb(114, 114, 114);
+  border-bottom: 1px solid rgb(114, 114, 114);
+}

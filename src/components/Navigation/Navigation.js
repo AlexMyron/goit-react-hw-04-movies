@@ -3,28 +3,21 @@ import s from "./Navigation.module.css";
 
 const Navigation = () => {
   return (
-    <nav className={s.nav}>
+    <nav className={s.navMenu}>
       <NavLink
         exact
+        to="/"
         className={s.navLink}
-        activeClassName={s.activeLInk}
-        to="./"
+        activeClassName={s.navLink_active}
       >
-        Главная
+        Home
       </NavLink>
       <NavLink
+        to="/movies"
         className={s.navLink}
-        activeClassName={s.activeLInk}
-        to="./authors"
+        activeClassName={s.navLink_active}
       >
-        Авторы
-      </NavLink>
-      <NavLink
-        className={s.navLink}
-        activeClassName={s.activeLInk}
-        to="./books"
-      >
-        Книги
+        Movies
       </NavLink>
     </nav>
   );

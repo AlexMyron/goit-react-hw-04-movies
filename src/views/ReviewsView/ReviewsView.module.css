@@ -1,0 +1,12 @@
+h3 {
+  margin: 0;
+  margin-bottom: 20px;
+}
+.reviewsList {
+  text-align: left;
+  list-style: none;
+}
+
+.reviewsItem:not(:last-child) {
+  margin-bottom: 30px;
+}
