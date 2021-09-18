@@ -6,12 +6,10 @@ import SearchForm from "../../components/SearchForm";
 
 const SearchMoviesView = () => {
   const [inputValue, setInputValue] = useState("");
-  const [searchMovies, setSearchMovies] = useState([]);
+  const [searchMovies, setSearchMovies] = useState(["empty"]);
   const history = useHistory();
   const location = useLocation();
   const queryParam = new URLSearchParams(location.search).get("query");
-
-  console.log(searchMovies);
 
   useEffect(() => {
     if (!queryParam) return;
@@ -36,9 +34,12 @@ const SearchMoviesView = () => {
         inputValue={inputValue}
         onChange={handleInput}
       />
-      {searchMovies.length > 0 ? (
+      {searchMovies !== null && searchMovies[0] !== "empty" ? (
         <MoviesList fetchedList={searchMovies} />
       ) : (
+        false
+      )}
+      {searchMovies.length === 0 && (
         <>
           <h3>"{queryParam}"</h3>
           <p>No such movie found...</p>
