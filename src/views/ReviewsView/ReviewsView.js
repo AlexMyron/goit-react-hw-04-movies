@@ -23,15 +23,16 @@ const ReviewsView = () => {
                 {review.author_details.avatar_path ? (
                   <img
                     src={review.author_details.avatar_path.slice(1)}
+                    width="200"
                     alt={review.author}
                   />
                 ) : (
-                  // eslint-disable-next-line jsx-a11y/alt-text
                   <img
                     src={
                       "https://cdn3.iconfinder.com/data/icons/persona/192/6_writing_pen_write_paper_take_note_copy_writing_avatar_face-512.png"
                     }
                     width="200"
+                    alt={review.author}
                   />
                 )}
               </div>
