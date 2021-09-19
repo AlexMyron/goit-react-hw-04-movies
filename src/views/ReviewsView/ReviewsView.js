@@ -23,7 +23,7 @@ const ReviewsView = () => {
                 {review.author_details.avatar_path ? (
                   <img
                     src={review.author_details.avatar_path.slice(1)}
-                    width="200"
+                    width="100"
                     alt={review.author}
                   />
                 ) : (
@@ -31,7 +31,7 @@ const ReviewsView = () => {
                     src={
                       "https://cdn3.iconfinder.com/data/icons/persona/192/6_writing_pen_write_paper_take_note_copy_writing_avatar_face-512.png"
                     }
-                    width="200"
+                    width="100"
                     alt={review.author}
                   />
                 )}

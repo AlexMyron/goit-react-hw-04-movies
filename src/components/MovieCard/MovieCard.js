@@ -1,4 +1,4 @@
-import { useHistory, NavLink, Route, Switch } from "react-router-dom";
+import { useHistory, NavLink, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { getGenres } from "../../functions/functions";
 import s from "./MovieCard.module.css";
@@ -58,14 +58,12 @@ const MovieCard = ({ movieData, movieYear }) => {
         </div>
       )}
       <Suspense fallback={<p>Loading...</p>}>
-        <Switch>
-          <Route path={`/movies/:movieId/cast`}>
-            <CastView />
-          </Route>
-          <Route path={`/movies/:movieId/reviews`}>
-            <ReviewsView />
-          </Route>
-        </Switch>
+        <Route path={`/movies/:movieId/cast`}>
+          <CastView />
+        </Route>
+        <Route path={`/movies/:movieId/reviews`}>
+          <ReviewsView />
+        </Route>
       </Suspense>
     </div>
   );

@@ -8,7 +8,6 @@ const MoviesView = () => {
   const { movieId } = useParams();
   const [movieData, setMovieData] = useState(null);
   const [releaseYear, setRelease_year] = useState("");
-  const [reviews, setReviews] = useState(null);
 
   useEffect(() => {
     fetchMovieById(movieId).then((data) => {
@@ -16,16 +15,9 @@ const MoviesView = () => {
       const year = cuttedDate(data.release_date);
       setRelease_year(year);
     });
-    fetchReviewById(movieId).then((reviews) => setReviews(reviews));
   }, [movieId]);
 
-  return (
-    <MovieCard
-      movieData={movieData}
-      reviews={reviews}
-      movieYear={releaseYear}
-    />
-  );
+  return <MovieCard movieData={movieData} movieYear={releaseYear} />;
 };
 
 export default MoviesView;
